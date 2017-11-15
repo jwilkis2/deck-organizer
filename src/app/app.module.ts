@@ -12,6 +12,10 @@ import { ChatboxComponent } from './chatbox/chatbox.component';
 import { MessageLeftComponent } from './message-left/message-left.component';
 import { MessageRightComponent } from './message-right/message-right.component';
 
+import { GoogleAnalyticsEventsService } from './services/google-analytics-events-service';
+
+
+
 import {
   RouterModule,
   Routes
@@ -45,7 +49,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [GoogleAnalyticsEventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
