@@ -1,5 +1,6 @@
 # DeckOrganizer
-
+URL: https://github.com/jwilkis2/deck-organizer  
+  
 The purpose of this application is to demonstrate my understanding of different aspect with regards to building website in angular.  The webpage is designed to allow a user to customize a Magic: the Gathering deck.  The search bar utilizes the Scryfall API (at scryfall.com) to pull in card infomation to store it in the table.  
   
 This application uitilizes the following components:  
