@@ -36,12 +36,12 @@ import { TwoButtonComponent } from './two-button/two-button.component';
 import { AuthGuardComponent } from './auth-guard/auth-guard.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuardComponent] },
   { path: 'login', component: LoginComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'chatbox', component: ChatboxComponent },
-  { path: '**', component: LoginComponent }
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuardComponent] },
+  { path: 'chatbox', component: ChatboxComponent, canActivate: [AuthGuardComponent] },
+  { path: '**', component: HomeComponent, canActivate: [AuthGuardComponent] }
 ];
 
 @NgModule({

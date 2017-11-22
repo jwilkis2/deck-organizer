@@ -10,10 +10,10 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AuthGuardComponent implements CanActivate {
   user: firebase.User;
-  
+
   constructor(private afAuth: AngularFireAuth, private router: Router) {
     this.afAuth.auth.onAuthStateChanged(user => {
-      if(user) {
+      if (user) {
         console.log('AuthStateChanged: user is logged in');
         this.user = user;
       } else {
@@ -24,7 +24,7 @@ export class AuthGuardComponent implements CanActivate {
   }
 
   canActivate() {
-    if(this.user) {
+    if (this.user) {
       console.log('CanActivate: user logged in');
       return true;
     }

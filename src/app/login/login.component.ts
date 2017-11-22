@@ -13,14 +13,15 @@ import { CanActivate, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  {
-    validLoginAttempt: boolean = true;
+    validLoginAttempt = true;
     user;
 
   constructor(public afAuth: AngularFireAuth, private router: Router) {
     this.afAuth.auth.onAuthStateChanged(user => {
-      if(user) {
+      if (user) {
         console.log('LoginComponent: AuthStateChanged: User logged in');
         this.user = user;
+        this.router.navigate(['/home']);
       } else {
         console.log('LoginComponent: AuthStateChanged: User logged out');
         this.user = undefined;
@@ -35,7 +36,7 @@ export class LoginComponent  {
       .signInWithCredential(firebase.auth.EmailAuthProvider.credential(email.value, password.value))
       .then(value => {
         console.log('LoginComponent: login: Successfully logged in');
-        this.router.navigate(['/home']);
+        // this.router.navigate(['/home']);
       })
       .catch(err => {
         this.failedLoginAttempt();
