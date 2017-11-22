@@ -1,29 +1,39 @@
+
+<div class="row justify-content-md-center">
+  <div class="col-6">
 <h1>Update your information here</h1>
 <h5>this will overwrite your current profile information.</h5>
 <br>
 
-<ul class="list-group">
+<ul class="list-group col-6">
   <li class="list-group-item">First Name: {{firstName}}</li>
   <li class="list-group-item">Last Name: {{lastName}}</li>
   <li class="list-group-item">Email: {{email}}</li>
 </ul>
 <br>
-<div>
-  <form>
-    <div>
-      <label>First Name</label>
-      <input type="text" placeholder="First Name" [(ngModel)]="model.firstName" name="firstName">
-    </div>      
-    <div>
-      <label>Last Name</label>
-      <input type="text" placeholder="Last Name" [(ngModel)]="model.lastName" name="lastName">
-    </div>
-    <div>
-      <label>Email</label>
-      <input type="text" placeholder="Email" [(ngModel)]="model.email" name="email">
-    </div>
-    <div>
-      <button (click)="updateProfile()"> Update Profile </button>
-    </div>
-  </form>
+</div>
+</div>
+<div class="row justify-content-md-center">
+<div class="col-6">
+  <div class="jumbotron">
+    <form>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input id="firstName" class="form-control" type="text" placeholder="First Name" [(ngModel)]="model.firstName" name="firstName">
+      </div>      
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" class="form-control" type="text" placeholder="Last Name" [(ngModel)]="model.lastName" name="lastName">
+      </div>
+      <!-- This does not actually change log in information... -->
+      <div class="form-group">
+        <label for="email" >Email</label>
+        <input id="email" class="form-control" type="text" placeholder="Email" [(ngModel)]="model.email" name="email">
+      </div>
+      <div>
+        <button (click)="updateProfile()"> Update Profile </button>
+      </div>
+    </form>
+  </div>
+</div>
 </div>

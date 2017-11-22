@@ -1,3 +1,14 @@
-<p>
-  message-left works!
-</p>
+<li class="left clearfix">
+    <span class="chat-img float-left">
+      <img class="rounded-circle" src="http://placehold.it/50/3366ff/fff&text={{name.charAt(0)}}"/>
+    </span>
+    <div class="chat-body clearfix">
+      <div class="header">
+        <strong class="font-weight-bold">{{name}}</strong>
+        <small class="text-muted float-right">{{timestamp}}</small>
+      </div>
+      <p>
+        {{message}}
+      </p>
+    </div>
+  </li>

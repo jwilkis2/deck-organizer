@@ -1,3 +1,14 @@
-<p>
-  message-right works!
-</p>
+<li class="right clearfix">
+    <span class="chat-img float-right">
+      <img class="rounded-circle" src="http://placehold.it/50/FA6F57/fff&text={{name.charAt(0)}}"/>
+    </span>
+    <div class="chat-body clearfix">
+      <div class="header">
+        <small class="text-muted">{{timestamp}}</small>
+        <strong class="font-weight-bold float-right">{{name}}</strong>
+      </div>
+      <p>
+        {{message}}
+      </p>
+    </div>
+  </li>

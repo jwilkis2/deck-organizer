@@ -1,3 +1,34 @@
-<p>
-  chatbox works!
-</p>
+<div class="container justify-content-end bottom-right" [ngStyle]="{'display': chatIsVisible() ? 'flex' : 'none'}">
+    <div class="row">
+      <div class="col-md-4 bottom-right">
+        <div class="card">
+          <div class="card-header">
+            Chat
+            <button type="button" class="close" aria-label="Close" (click)=closeChat()>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="card-body">
+            <ul class="chat" *ngFor="let message of chat; let i = index">
+              <app-message-right *ngIf="i%2 == 0"
+                name="{{message.getName()}}"
+                timestamp="{{message.getTimestamp()}}"
+                message="{{message.getMessage()}}"></app-message-right>
+              <app-message-left *ngIf="i%2 == 1"
+                name="{{message.getName()}}"
+                timestamp="{{message.getTimestamp()}}"
+                message="{{message.getMessage()}}"></app-message-left>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="input-group">
+              <input type="text" class="form-control input-sm" placeholder="Send a message">
+              <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Send</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
